@@ -5,11 +5,6 @@ pool:
   name: azure pipelines
 
 steps:
-- task: usedotnet@2
-    displayname: 'use .net core sdk 8.0.303'
-    inputs:
-    version: 8.0.303
-
 - task: npm@01
     displayname: 'run npm install'
 
