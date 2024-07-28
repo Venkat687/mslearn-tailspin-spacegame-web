@@ -14,7 +14,6 @@ steps:
 -  task: npm@01
    displayname:
    inputs: run npm install
-     verbose:
 
 - script: './node_modules/bin/node_saas Tailspin.spacegame.web/wwwroot --output Tailspin.spacegame.web/wwwroot'
   displayname: 'compile saas assets'
