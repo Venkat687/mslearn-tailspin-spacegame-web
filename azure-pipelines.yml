@@ -6,7 +6,7 @@ pool:
 
 steps:
 - task: usedotnet@2
-    displayname: 'use .net sdk 6.x'
+    displayname: 'use .net core sdk 6.x'
   inputs:
     package type: sdk
     version: '6.x'
