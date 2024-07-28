@@ -7,7 +7,7 @@ pool:
 steps:
 - task: npm@01
     displayname: 'run npm install'
-    command:npm install
+    command: npm install
 
 - script: './node_modules/bin/node_saas Tailspin.spacegame.web/wwwroot --output Tailspin.spacegame.web/wwwroot'
     displayname: 'compile saas assets'
