@@ -7,6 +7,7 @@ pool:
 steps:
 - task: npm@01
     displayname: 'run npm install'
+    command:npm install
 
 - script: './node_modules/bin/node_saas Tailspin.spacegame.web/wwwroot --output Tailspin.spacegame.web/wwwroot'
     displayname: 'compile saas assets'
@@ -16,7 +17,7 @@ steps:
 
 - script: 'echo "$(build.definitionname), $(build.id), $(build.buildnumber)" > buildinfo.text'
     displayname: 'write build info'
-  Workingdirectory: 'Tailspin.spaceweb.game/wwwroot'
+    Workingdirectory: 'Tailspin.spaceweb.game/wwwroot'
 
 -  task: dotnetcorecli@2
      displayname: 'restore project dependencies'
