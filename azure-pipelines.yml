@@ -4,9 +4,6 @@ trigger:
 pool:
   name: azure pipelines
 
-Variables:
-  Buildconfiguration: 'releases'
-
 steps:
 - task: usedotnet@2
   displayname: use .net sdk 6.1
