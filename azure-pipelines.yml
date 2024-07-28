@@ -6,14 +6,13 @@ pool:
 
 steps:
 - task: usedotnet@2
-  displayname: use .net sdk 6.1
+  displayname: 'use .net sdk 6.x'
   inputs:
     package type: sdk
     version: 6.x
 
 -  task: npm@01
-   displayname:
-   inputs: run npm install
+   displayname: 'run npm install'
 
 - script: './node_modules/bin/node_saas Tailspin.spacegame.web/wwwroot --output Tailspin.spacegame.web/wwwroot'
   displayname: 'compile saas assets'
