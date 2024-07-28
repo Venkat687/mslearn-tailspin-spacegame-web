@@ -6,32 +6,32 @@ pool:
 
 steps:
 - task: usedotnet@2
-  displayname: 'use .net sdk 6.x'
+    displayname: 'use .net sdk 6.x'
   inputs:
     package type: sdk
     version: 6.x
 
--  task: npm@01
-   displayname: 'run npm install'
+- task: npm@01
+     displayname: 'run npm install'
 
 - script: './node_modules/bin/node_saas Tailspin.spacegame.web/wwwroot --output Tailspin.spacegame.web/wwwroot'
-  displayname: 'compile saas assets'
+    displayname: 'compile saas assets'
 
 - task: gulp@01
-  displayname: 'run gulp tasks'
+    displayname: 'run gulp tasks'
 
 - script: 'echo "$(build.definitionname), $(build.id), $(build.buildnumber)" > buildinfo.text'
-  displayname: 'write build info'
+    displayname: 'write build info'
   Workingdirectory: 'Tailspin.spaceweb.game/wwwroot'
 
 -  task: dotnetcorecli@2
-   displayname: 'restore project dependencies'
+     displayname: 'restore project dependencies'
    inputs: 
      commands: 'restore'
      projects: '**/*.csproj'
 
 -  task: dotnetcorecli@2
-   displayname: 'build project'
+     displayname: 'build project'
    inputs: 
      commands: 'build'
      arguments: '--no-restore --configuration release'
